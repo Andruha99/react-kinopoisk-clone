@@ -1,5 +1,4 @@
-import styled, { createGlobalStyle } from "styled-components";
-import { secondaryColor } from "./colors";
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
     * {
