@@ -6,4 +6,9 @@ export const GlobalStyles = createGlobalStyle`
         margin: 0;
         padding: 0;
     }
+
+    body {
+        font-family: 'Exo 2', sans-serif;
+        font-style: normal;
+    }
 `;
