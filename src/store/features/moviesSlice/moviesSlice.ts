@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios, { AxiosError } from "axios";
+import { transformMovieApi } from "mappers";
 import { Movie, ResponseMovie, ResponseMovieApi } from "types";
 
 interface MoviesState {
@@ -21,7 +22,7 @@ export const fetchMovies = createAsyncThunk<ResponseMovie, string, { rejectValue
       const { data } = await axios.get<ResponseMovieApi>(
         `http://www.omdbapi.com/?apikey=75ceb16d&s=${title}`,
       );
-      return data;
+      return transformMovieApi(data);
     } catch (error) {
       const { message } = error as AxiosError;
       return rejectWithValue(message);
