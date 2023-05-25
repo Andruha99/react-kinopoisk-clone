@@ -1,5 +1,6 @@
 import React from "react";
 import { Movie } from "types";
+import { CardWrap, Poster, Title } from "./style";
 
 interface MovieCardProps {
   movie: Movie;
@@ -7,9 +8,9 @@ interface MovieCardProps {
 
 export const MovieCard = ({ movie }: MovieCardProps) => {
   return (
-    <div>
-      <h3>{movie.title}</h3>
-      <p>{movie.type}</p>
-    </div>
+    <CardWrap>
+      <Poster src={movie.poster} alt={movie.title} />
+      <Title>{movie.title}</Title>
+    </CardWrap>
   );
 };

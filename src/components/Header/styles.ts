@@ -1,9 +1,18 @@
 import styled from "styled-components";
+import { Colors, Media } from "ui";
 
 const HeaderContainer = styled.div`
   position: sticky;
   top: 0;
-  z-index: 2;
+  display: flex;
+  gap: 146px;
+  padding-top: 40px;
+  padding-bottom: 54px;
+  background-color: ${Colors.WhiteContext};
+
+  ${Media.XL} {
+    gap: 89px;
+  }
 `;
 
 export { HeaderContainer };
