@@ -13,6 +13,10 @@ const HeaderContainer = styled.div`
   ${Media.XL} {
     gap: 89px;
   }
+
+  ${Media.LG} {
+    gap: 78px;
+  }
 `;
 
 export { HeaderContainer };

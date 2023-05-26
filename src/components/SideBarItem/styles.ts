@@ -1,6 +1,11 @@
 import styled from "styled-components";
 import { Colors, S1 } from "ui";
 
+const NavContainer = styled.div`
+  width: 100%;
+  margin-bottom: 40px;
+`;
+
 const Icon = styled.span`
   margin-right: 20px;
   svg {
@@ -13,4 +18,4 @@ const NavText = styled.span`
   color: ${Colors.SystemDark};
 `;
 
-export { Icon, NavText };
+export { NavContainer, Icon, NavText };

@@ -1,11 +1,10 @@
 import { MoviesList } from "components";
 import React, { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "store";
-import { fetchMovies } from "store/features/moviesSlice/moviesSlice";
-import { selectorMovies } from "store/selectors/moviesSelector";
+import { ROUTE } from "routes";
+import { fetchMovies, selectorMovies, useAppDispatch, useAppSelector } from "store";
 
 export const HomePage = () => {
-  const { movies } = useAppSelector(selectorMovies);
+  const { movies, error } = useAppSelector(selectorMovies);
   const dispatch = useAppDispatch();
 
   const movieName = ["hour", "man", "batman", "iron", "smile", "office", "theory", "star"];
@@ -13,7 +12,12 @@ export const HomePage = () => {
 
   useEffect(() => {
     dispatch(fetchMovies(randomName));
-  }, [dispatch, randomName]);
+  }, [dispatch]);
 
-  return <div>{movies?.length > 0 && <MoviesList movies={movies} />}</div>;
+  return (
+    <div>
+      {error && <div>{error}</div>}
+      {movies?.length > 0 && <MoviesList movies={movies} link={ROUTE.DETAILS} />}
+    </div>
+  );
 };

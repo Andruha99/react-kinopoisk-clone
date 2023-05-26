@@ -1,5 +1,6 @@
 import { useAppDispatch, useAppSelector } from "./hooks/hooks";
 import { store } from "./store";
-import moviesReducer from "./features/moviesSlice/moviesSlice";
+import moviesReducer, { fetchMovies } from "./features/moviesSlice/moviesSlice";
+import { selectorMovies } from "./selectors/moviesSelector";
 
-export { store, useAppSelector, useAppDispatch, moviesReducer };
+export { store, useAppSelector, useAppDispatch, fetchMovies, moviesReducer, selectorMovies };

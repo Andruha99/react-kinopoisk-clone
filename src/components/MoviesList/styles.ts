@@ -9,10 +9,15 @@ const MoviesWrap = styled.div`
 
   ${Media.XL} {
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 32px;
+  }
+
+  ${Media.LG} {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   ${Media.MD} {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 
   ${Media.SM} {

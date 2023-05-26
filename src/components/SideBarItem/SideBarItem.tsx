@@ -1,5 +1,5 @@
 import React from "react";
-import { Icon, NavText } from "./styles";
+import { Icon, NavContainer, NavText } from "./styles";
 
 interface SideBarItemProps {
   icon: any;
@@ -8,9 +8,9 @@ interface SideBarItemProps {
 
 export const SideBarItem = ({ icon, text }: SideBarItemProps) => {
   return (
-    <div>
+    <NavContainer>
       <Icon>{icon}</Icon>
       <NavText>{text}</NavText>
-    </div>
+    </NavContainer>
   );
 };

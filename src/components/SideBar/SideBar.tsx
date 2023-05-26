@@ -1,5 +1,5 @@
 import React from "react";
-import { Rights, StyledLink, StyledSideBar } from "./styles";
+import { LinkContainer, Rights, StyledLink, StyledSideBar } from "./styles";
 import { SideBarItem } from "components/SideBarItem/SideBarItem";
 import { FavoritesIcon, HomeIcon, SettingsIcon, TrendsIcon } from "assets";
 import { Link } from "react-router-dom";
@@ -8,7 +8,7 @@ import { ROUTE } from "routes";
 export const SideBar = () => {
   return (
     <StyledSideBar>
-      <div>
+      <LinkContainer>
         <StyledLink to={ROUTE.HOME}>
           <SideBarItem icon={<HomeIcon />} text="Home" />
         </StyledLink>
@@ -21,7 +21,7 @@ export const SideBar = () => {
         <StyledLink to={ROUTE.SETTINGS}>
           <SideBarItem icon={<SettingsIcon />} text="Settings" />
         </StyledLink>
-      </div>
+      </LinkContainer>
       <Rights>© All Rights Reserved</Rights>
     </StyledSideBar>
   );
