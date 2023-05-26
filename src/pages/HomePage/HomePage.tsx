@@ -17,7 +17,7 @@ export const HomePage = () => {
   return (
     <div>
       {error && <div>{error}</div>}
-      {movies?.length > 0 && <MoviesList movies={movies} link={ROUTE.DETAILS} />}
+      {movies?.length > 0 && <MoviesList movies={movies} />}
     </div>
   );
 };

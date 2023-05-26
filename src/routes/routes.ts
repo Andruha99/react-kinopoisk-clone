@@ -1,7 +1,6 @@
 export enum ROUTE {
   HOME = "/",
-  DETAILS = "details",
-  // DETAILS = "deatails/:id",
+  DETAILS = "deatails/:imdbID",
   SEARCH = "search",
   FAVORITES = "favorites",
   TRENDS = "trends",
