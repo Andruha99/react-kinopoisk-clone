@@ -7,6 +7,8 @@ import { ReactComponent as ImdbLogo } from "./icons/imdbLogo.svg";
 import { ReactComponent as UserIcon } from "./icons/user.svg";
 import { ReactComponent as ArrowIconRight } from "./icons/chevron-right.svg";
 import { ReactComponent as ProfileIcon } from "./icons/profile.svg";
+import { ReactComponent as BurgerMenuIcon } from "./icons/burger-menu.svg";
+import { ReactComponent as CloseMenu } from "./icons/close-menu.svg";
 
 export {
   PixemaLight,
@@ -18,4 +20,6 @@ export {
   UserIcon,
   ArrowIconRight,
   ProfileIcon,
+  BurgerMenuIcon,
+  CloseMenu,
 };

@@ -1,29 +1,40 @@
 import styled from "styled-components";
 import { Colors, Media } from "ui";
 
+const HeaderWrap = styled.div`
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: ${Colors.WhiteContext};
+`;
+
 const HeaderContainer = styled.div`
   position: sticky;
   top: 0;
   display: flex;
-  gap: 146px;
   align-items: center;
+  width: 1184px;
   padding-top: 40px;
   padding-bottom: 54px;
   background-color: ${Colors.WhiteContext};
 
   ${Media.XL} {
-    gap: 89px;
+    width: 928px;
   }
 
   ${Media.LG} {
-    gap: 78px;
+    width: 688px;
+  }
+
+  ${Media.MD} {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 448px;
+  }
+
+  ${Media.SM} {
+    width: 272px;
   }
 `;
 
-const InputAccountContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  width: 75%;
-`;
-
-export { HeaderContainer, InputAccountContainer };
+export { HeaderContainer, HeaderWrap };
