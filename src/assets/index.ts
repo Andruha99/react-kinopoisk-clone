@@ -4,5 +4,18 @@ import { ReactComponent as TrendsIcon } from "./icons/trends.svg";
 import { ReactComponent as FavoritesIcon } from "./icons/favorites.svg";
 import { ReactComponent as SettingsIcon } from "./icons/setting.svg";
 import { ReactComponent as ImdbLogo } from "./icons/imdbLogo.svg";
+import { ReactComponent as UserIcon } from "./icons/user.svg";
+import { ReactComponent as ArrowIconRight } from "./icons/chevron-right.svg";
+import { ReactComponent as ProfileIcon } from "./icons/profile.svg";
 
-export { PixemaLight, HomeIcon, TrendsIcon, FavoritesIcon, SettingsIcon, ImdbLogo };
+export {
+  PixemaLight,
+  HomeIcon,
+  TrendsIcon,
+  FavoritesIcon,
+  SettingsIcon,
+  ImdbLogo,
+  UserIcon,
+  ArrowIconRight,
+  ProfileIcon,
+};

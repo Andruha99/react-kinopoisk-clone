@@ -6,6 +6,7 @@ const HeaderContainer = styled.div`
   top: 0;
   display: flex;
   gap: 146px;
+  align-items: center;
   padding-top: 40px;
   padding-bottom: 54px;
   background-color: ${Colors.WhiteContext};
@@ -19,4 +20,10 @@ const HeaderContainer = styled.div`
   }
 `;
 
-export { HeaderContainer };
+const InputAccountContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 75%;
+`;
+
+export { HeaderContainer, InputAccountContainer };

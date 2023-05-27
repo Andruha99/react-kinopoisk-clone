@@ -1,7 +1,7 @@
 import React from "react";
 import { LinkContainer, Rights, StyledLink, StyledSideBar } from "./styles";
 import { SideBarItem } from "components/SideBarItem/SideBarItem";
-import { FavoritesIcon, HomeIcon, SettingsIcon, TrendsIcon } from "assets";
+import { FavoritesIcon, HomeIcon, ProfileIcon, SettingsIcon, TrendsIcon } from "assets";
 import { Link } from "react-router-dom";
 import { ROUTE } from "routes";
 
