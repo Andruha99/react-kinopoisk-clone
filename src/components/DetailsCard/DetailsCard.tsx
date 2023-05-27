@@ -6,12 +6,15 @@ import {
   BadgeInformation,
   DetailsPoster,
   DetailsWrap,
+  FavoriteButton,
   Genre,
-  Information,
-  InformationContainer,
   MovieTitle,
   Plot,
   Rating,
+  RowData,
+  RowTitle,
+  Table,
+  TableRow,
 } from "./styles";
 
 interface DetailsCardProps {
@@ -23,7 +26,9 @@ export const DetailsCard = ({ details }: DetailsCardProps) => {
     <DetailsWrap>
       <div>
         <DetailsPoster src={details.poster} alt={details.title} />
-        <FavoritesIcon />
+        <FavoriteButton>
+          <FavoritesIcon />
+        </FavoriteButton>
       </div>
       <div>
         <div>
@@ -37,28 +42,40 @@ export const DetailsCard = ({ details }: DetailsCardProps) => {
             <BadgeInformation>{details.runtime}</BadgeInformation>
           </BadgeContainer>
           <Plot>{details.plot}</Plot>
-          <InformationContainer>
-            <div>
-              <Information>Year:</Information>
-              <Information>Released:</Information>
-              <Information>BoxOffice:</Information>
-              <Information>Country:</Information>
-              <Information>Production:</Information>
-              <Information>Actors:</Information>
-              <Information>Director: </Information>
-              <Information>Writers: </Information>
-            </div>
-            <div>
-              <Information>{details.year}</Information>
-              <Information>{details.released}</Information>
-              <Information>{details.boxOffice}</Information>
-              <Information>{details.country}</Information>
-              <Information>{details.production}</Information>
-              <Information>{details.actors}</Information>
-              <Information>{details.director}</Information>
-              <Information>{details.writer}</Information>
-            </div>
-          </InformationContainer>
+          <Table>
+            <TableRow>
+              <RowTitle>Year:</RowTitle>
+              <RowData>{details.year}</RowData>
+            </TableRow>
+            <TableRow>
+              <RowTitle>Released:</RowTitle>
+              <RowData>{details.released}</RowData>
+            </TableRow>
+            <TableRow>
+              <RowTitle>BoxOffice:</RowTitle>
+              <RowData>{details.boxOffice}</RowData>
+            </TableRow>
+            <TableRow>
+              <RowTitle>Country:</RowTitle>
+              <RowData>{details.country}</RowData>
+            </TableRow>
+            <TableRow>
+              <RowTitle>Production:</RowTitle>
+              <RowData>{details.production}</RowData>
+            </TableRow>
+            <TableRow>
+              <RowTitle>Actors:</RowTitle>
+              <RowData>{details.actors}</RowData>
+            </TableRow>
+            <TableRow>
+              <RowTitle>Director:</RowTitle>
+              <RowData>{details.director}</RowData>
+            </TableRow>
+            <TableRow>
+              <RowTitle>Writers:</RowTitle>
+              <RowData>{details.writer}</RowData>
+            </TableRow>
+          </Table>
         </div>
       </div>
     </DetailsWrap>
