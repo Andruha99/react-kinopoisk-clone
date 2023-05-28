@@ -6,6 +6,8 @@ import { AccountName } from "components/AccountName/AccountName";
 import { useToggle } from "hooks/useToggle";
 import { useWindowSize } from "hooks/useWindowSize";
 import { BurgerMenu } from "components/BurgerMenu/BurgerMenu";
+import { ROUTE } from "routes";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   const [isMenuOpen, toggleMenu] = useToggle();
@@ -14,7 +16,9 @@ export const Header = () => {
   return (
     <HeaderWrap>
       <HeaderContainer>
-        <PixemaLight />
+        <Link to={ROUTE.HOME}>
+          <PixemaLight />
+        </Link>
         <InputSearch />
         <AccountName />
         {isMobile && (
