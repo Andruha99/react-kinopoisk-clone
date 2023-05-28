@@ -1,3 +1,4 @@
+import { Route, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
 import { DetailsPage } from "../pages/DetailsPage/DetailsPage";
 import { FavoritesPage } from "../pages/FavoritesPage/FavoritesPage";
 import { HomePage } from "../pages/HomePage/HomePage";
@@ -8,7 +9,6 @@ import { SignInPage } from "../pages/SignInPage/SignInPage";
 import { SignUpPage } from "../pages/SignUpPage/SignUpPage";
 import { TrendsPage } from "../pages/TrendsPage/TrendsPage";
 import { ROUTE } from "./routes";
-import { Route, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
 import { MainTemplate } from "../templates/MainTemplate";
 
 export const router = createBrowserRouter(

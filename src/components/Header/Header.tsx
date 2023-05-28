@@ -36,7 +36,9 @@ export const Header = () => {
         <form onSubmit={handleSubmit(onSubmit)}>
           <StyledInputSearch type="text" {...register("searchValue")} />
         </form>
-        <AccountName />
+        <Link to={ROUTE.SIGN_UP}>
+          <AccountName />
+        </Link>
         {isMobile && (
           <BurgerMenu isMobile={isMobile} handleClose={toggleMenu} isOpen={isMenuOpen} />
         )}
