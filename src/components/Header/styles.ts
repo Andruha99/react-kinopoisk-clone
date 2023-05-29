@@ -16,7 +16,8 @@ const HeaderContainer = styled.div`
   width: 1184px;
   padding-top: 40px;
   padding-bottom: 54px;
-  background-color: ${Colors.WhiteContext};
+  background-color: ${Colors.BackgroundTheme};
+  border: 0px;
 
   ${Media.XL} {
     width: 928px;
@@ -42,6 +43,7 @@ const StyledInputSearch = styled.input`
   height: 56px;
   margin-left: 146px;
   margin-right: 42px;
+  background-color: ${Colors.InputBackground};
   border-radius: 10px;
 
   ${Media.XL} {
@@ -67,4 +69,10 @@ const StyledInputSearch = styled.input`
   }
 `;
 
-export { HeaderContainer, HeaderWrap, StyledInputSearch };
+const Form = styled.form`
+  ${Media.MD} {
+    order: 2;
+  }
+`;
+
+export { HeaderContainer, HeaderWrap, StyledInputSearch, Form };

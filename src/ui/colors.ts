@@ -11,4 +11,7 @@ export enum Colors {
   GreenTertiary = "#00A340",
   YellowTertiary = "#00A340",
   OrangeTertiary = "#F45D2D",
+  TextColor = "var(--TextColor)",
+  BackgroundTheme = "var(--BackgroundTheme)",
+  InputBackground = "var(--InputBackground)",
 }

@@ -1,6 +1,6 @@
 import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { PixemaLight } from "assets";
-import { HeaderContainer, HeaderWrap, StyledInputSearch } from "./styles";
+import { Form, HeaderContainer, HeaderWrap, StyledInputSearch } from "./styles";
 import { InputSearch } from "components/InputSearch/InputSearch";
 import { AccountName } from "components/AccountName/AccountName";
 import { useToggle } from "hooks/useToggle";
@@ -33,9 +33,9 @@ export const Header = () => {
         <Link to={ROUTE.HOME}>
           <PixemaLight />
         </Link>
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <Form onSubmit={handleSubmit(onSubmit)}>
           <StyledInputSearch type="text" {...register("searchValue")} />
-        </form>
+        </Form>
         <Link to={ROUTE.SIGN_UP}>
           <AccountName />
         </Link>
