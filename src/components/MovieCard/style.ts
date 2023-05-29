@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { Media, S2 } from "ui";
+import { Colors, Media, S2 } from "ui";
 
 const CardWrap = styled.div`
   width: 266px;
@@ -33,6 +33,7 @@ const Poster = styled.img`
 const Title = styled.h3`
   font-size: ${S2};
   text-decoration: none;
+  color: ${Colors.TextColor};
 `;
 
 export { CardWrap, Poster, Title };

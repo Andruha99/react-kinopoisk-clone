@@ -92,4 +92,19 @@ interface DetailsMovie {
   response: string;
 }
 
-export type { MovieApi, Movie, ResponseMovieApi, ResponseMovie, DetailsMovieApi, DetailsMovie };
+interface AuthValues {
+  name: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
+}
+
+export type {
+  MovieApi,
+  Movie,
+  ResponseMovieApi,
+  ResponseMovie,
+  DetailsMovieApi,
+  DetailsMovie,
+  AuthValues,
+};

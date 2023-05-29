@@ -4,7 +4,7 @@ import { B1, Colors, H2, S3 } from "ui";
 
 const SignInContainer = styled.div`
   width: 100%;
-  margin: 0px auto;
+  margin: 0 auto;
 `;
 
 const SignInFormContainer = styled.form`

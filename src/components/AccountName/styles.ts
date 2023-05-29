@@ -24,6 +24,8 @@ const AccountIcon = styled(UserIcon)`
 const Name = styled.p`
   margin-left: 20px;
   margin-right: 51px;
+  color: ${Colors.TextColor};
+  text-decoration: none;
 `;
 
 export { AccountWrapper, AccountIcon, Name };

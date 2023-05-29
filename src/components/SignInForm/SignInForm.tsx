@@ -1,5 +1,6 @@
 import React from "react";
-import { useForm } from "react-hook-form";
+
+import { SubmitHandler, useForm } from "react-hook-form";
 import {
   Forgot,
   InputName,
@@ -12,29 +13,32 @@ import {
   Title,
 } from "./styles";
 import { ROUTE } from "routes";
-import { Link } from "react-router-dom";
+import { AuthValues } from "types";
 
-export const SignInForm = () => {
-  const { register, handleSubmit } = useForm();
+interface SignUpFormProps {
+  onSubmit: SubmitHandler<AuthValues>;
+}
 
-  const onSubmit = (data: any) => {
-    // console.log(data);
-  };
+export const SignInForm = ({ onSubmit }: SignUpFormProps) => {
+  const { register, handleSubmit, reset } = useForm<AuthValues>();
 
   return (
-    <SignInContainer>
-      <SignInFormContainer onSubmit={handleSubmit(onSubmit)}>
-        <Title>Sign In</Title>
-        <InputName>Email</InputName>
-        <StyledSignInput type="text" {...register("email")} placeholder="Your email" />
-        <InputName>Password</InputName>
-        <StyledSignInput type="password" {...register("password")} placeholder="Your password" />
-        <Forgot>Forgot password?</Forgot>
-        <StyledButton type="submit">Sign in</StyledButton>
-        <SignUpText>
-          Don’t have an account? <SignUpLink to={ROUTE.SIGN_UP}>Sign Up</SignUpLink>
-        </SignUpText>
-      </SignInFormContainer>
-    </SignInContainer>
+    <div>
+      <SignInContainer>
+        <SignInFormContainer onSubmit={handleSubmit(onSubmit)}>
+          <Title>Sign In</Title>
+          <InputName>Email</InputName>
+          <StyledSignInput type="text" {...register("email")} placeholder="Your email" />
+          <InputName>Password</InputName>
+          <StyledSignInput type="password" {...register("password")} placeholder="Your password" />
+
+          <Forgot>Forgot password?</Forgot>
+          <StyledButton type="submit">Sign up</StyledButton>
+          <SignUpText>
+            Don’t have an account? <SignUpLink to={ROUTE.SING_UP_AT_SIGN_IN}>Sign In</SignUpLink>
+          </SignUpText>
+        </SignInFormContainer>
+      </SignInContainer>
+    </div>
   );
 };

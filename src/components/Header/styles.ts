@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Colors, Media } from "ui";
 
@@ -75,4 +76,8 @@ const Form = styled.form`
   }
 `;
 
-export { HeaderContainer, HeaderWrap, StyledInputSearch, Form };
+const StyledLink = styled(Link)`
+  text-decoration: none;
+`;
+
+export { HeaderContainer, HeaderWrap, StyledInputSearch, Form, StyledLink };
