@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  signOut,
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../../../firebase";
@@ -43,6 +44,10 @@ export const fetchSignInUser = createAsyncThunk<UserState, AuthValues>(
   },
 );
 
+export const fetchSignOutUser = createAsyncThunk("user/fetchSignOutUser", () => {
+  signOut(auth);
+});
+
 const initialState: UserState = {
   name: null,
   email: null,
@@ -73,6 +78,13 @@ const userSlice = createSlice({
     builder.addCase(fetchSignInUser.rejected, (state, { payload }) => {
       alert("Checked entered data!");
     });
+    builder.addCase(fetchSignOutUser.pending, (state, { payload }) => {});
+    builder.addCase(fetchSignOutUser.fulfilled, (state, { payload }) => {
+      state.isAuth = false;
+      state.email = null;
+      state.name = null;
+    });
+    builder.addCase(fetchSignOutUser.rejected, (state, { payload }) => {});
   },
 });
 

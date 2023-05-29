@@ -28,9 +28,17 @@ export const SignInForm = ({ onSubmit }: SignUpFormProps) => {
         <SignInFormContainer onSubmit={handleSubmit(onSubmit)}>
           <Title>Sign In</Title>
           <InputName>Email</InputName>
-          <StyledSignInput type="text" {...register("email")} placeholder="Your email" />
+          <StyledSignInput
+            type="text"
+            {...register("email", { required: true })}
+            placeholder="Your email"
+          />
           <InputName>Password</InputName>
-          <StyledSignInput type="password" {...register("password")} placeholder="Your password" />
+          <StyledSignInput
+            type="password"
+            {...register("password", { required: true })}
+            placeholder="Your password"
+          />
 
           <Forgot>Forgot password?</Forgot>
           <StyledButton type="submit">Sign up</StyledButton>
