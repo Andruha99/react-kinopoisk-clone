@@ -5,7 +5,9 @@ import { Colors, Media } from "ui";
 const AccountWrapper = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-between;
   height: 100%;
+  width: 266px;
   cursor: pointer;
 
   ${Media.XL} {

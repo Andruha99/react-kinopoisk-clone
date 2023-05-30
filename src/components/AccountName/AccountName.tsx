@@ -1,4 +1,4 @@
-import { ArrowIconRight, ProfileIcon, UserIcon } from "assets";
+import { ArrowIconRight, ProfileIcon } from "assets";
 import React from "react";
 import { AccountIcon, AccountWrapper, Name } from "./styles";
 import { useAppSelector } from "store";
