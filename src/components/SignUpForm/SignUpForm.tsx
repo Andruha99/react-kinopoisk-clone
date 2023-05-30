@@ -12,6 +12,7 @@ import {
 } from "./styles";
 import { ROUTE } from "routes";
 import { AuthValues } from "types";
+import { Link } from "react-router-dom";
 
 interface SignUpFormProps {
   onSubmit: SubmitHandler<AuthValues>;
@@ -53,7 +54,6 @@ export const SignUpForm = ({ onSubmit }: SignUpFormProps) => {
           {...register("confirmPassword", { required: true })}
           placeholder="Confirm  password"
         />
-        <Forgot>Forgot password?</Forgot>
         <StyledButton type="submit">Sign up</StyledButton>
         <SignUpText>
           Already have an account? <SignUpLink to={ROUTE.SING_IN_AT_SING_UP}>Sign In</SignUpLink>

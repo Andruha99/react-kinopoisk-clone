@@ -37,7 +37,6 @@ const StyledSignInput = styled.input`
 `;
 
 const Forgot = styled.p`
-  margin-top: 8px;
   margin-bottom: 40px;
   font-size: ${B1};
   color: ${Colors.LightContext};
@@ -46,6 +45,7 @@ const Forgot = styled.p`
 
 const StyledButton = styled.button`
   padding: 16px 0px;
+  margin-top: 40px;
   color: ${Colors.WhiteContext};
   background-color: ${Colors.Primary};
   border: 0px;
