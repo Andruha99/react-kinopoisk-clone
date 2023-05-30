@@ -1,7 +1,6 @@
 import { MoviesList } from "components";
 import { ShowMore } from "components/ShowMore/ShowMore";
-import React, { useEffect, useState } from "react";
-import { ROUTE } from "routes";
+import { useEffect, useState } from "react";
 import { fetchMovies, selectorMovies, useAppDispatch, useAppSelector } from "store";
 
 export const HomePage = () => {
