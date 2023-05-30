@@ -12,35 +12,30 @@ const SignInFormContainer = styled.form`
   flex-direction: column;
   width: 494px;
   padding: 40px;
-  background-color: ${Colors.WhiteContext};
+  background-color: ${Colors.BackgroundTheme};
   border-radius: 10px;
 `;
 
 const Title = styled.h1`
   margin-bottom: 16px;
   font-size: ${H2};
-  color: ${Colors.BackgroundDark};
+  color: ${Colors.TextColor};
 `;
 
 const InputName = styled.h3`
   margin-top: 24px;
   margin-bottom: 8px;
   font-size: ${S3};
+  color: ${Colors.TextColor};
 `;
 
 const StyledSignInput = styled.input`
   padding-top: 16px;
   padding-bottom: 16px;
   padding-left: 20px;
-  border-color: ${Colors.LightContext};
+  background-color: ${Colors.InputBackground};
+  border: 0px;
   border-radius: 10px;
-`;
-
-const Forgot = styled.p`
-  margin-bottom: 40px;
-  font-size: ${B1};
-  color: ${Colors.LightContext};
-  cursor: pointer;
 `;
 
 const StyledButton = styled.button`
@@ -72,7 +67,6 @@ export {
   Title,
   InputName,
   StyledSignInput,
-  Forgot,
   StyledButton,
   SignUpText,
   SignUpLink,

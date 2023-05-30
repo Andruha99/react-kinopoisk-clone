@@ -1,6 +1,5 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import {
-  Forgot,
   InputName,
   SignInContainer,
   SignInFormContainer,
