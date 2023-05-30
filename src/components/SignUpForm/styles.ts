@@ -34,7 +34,6 @@ const StyledSignInput = styled.input`
   padding-bottom: 16px;
   padding-left: 20px;
   background-color: ${Colors.InputBackground};
-  border: 0px;
   border-radius: 10px;
 `;
 

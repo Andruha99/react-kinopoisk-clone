@@ -59,11 +59,13 @@ const FavoriteButton = styled.div`
 
 const Genre = styled.p`
   font-size: ${B1};
+  color: ${Colors.DetailsRowNames};
 `;
 
 const MovieTitle = styled.h1`
   margin-bottom: 24px;
   font-size: ${H1};
+  color: ${Colors.DetailMovieTitle};
 `;
 
 const BadgeContainer = styled.div`
@@ -92,6 +94,7 @@ const BadgeInformation = styled.div`
 const Plot = styled.div`
   margin-bottom: 40px;
   font-size: ${B1};
+  color: ${Colors.DetailMovieTitle};
 `;
 
 const Table = styled.table``;
@@ -103,11 +106,13 @@ const TableRow = styled.tr`
 const RowTitle = styled.td`
   font-size: ${B1};
   vertical-align: top;
+  color: ${Colors.DetailsRowNames};
 `;
 
 const RowData = styled.td`
   padding-left: 54px;
   padding-bottom: 20px;
+  color: ${Colors.DetailMovieText};
 `;
 
 export {

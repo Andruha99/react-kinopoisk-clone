@@ -16,8 +16,7 @@ import {
   Table,
   TableRow,
 } from "./styles";
-import { useAppDispatch, useAppSelector } from "store";
-import { userSelector } from "store/selectors/userSelector";
+import { useAppDispatch } from "store";
 import { addFavorite } from "store/features/favoritesSlice/favoritesSlice";
 
 interface DetailsCardProps {
@@ -25,8 +24,6 @@ interface DetailsCardProps {
 }
 
 export const DetailsCard = ({ details }: DetailsCardProps) => {
-  const { isAuth } = useAppSelector(userSelector);
-
   const dispatch = useAppDispatch();
 
   const handleAddFavorite = () => {
@@ -37,7 +34,6 @@ export const DetailsCard = ({ details }: DetailsCardProps) => {
       type: details.type,
       poster: details.poster,
     };
-    console.log(localStorage);
     dispatch(addFavorite(movie));
   };
 

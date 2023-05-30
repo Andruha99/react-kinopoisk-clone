@@ -1,5 +1,6 @@
 import { MoviesList } from "components";
 import { useEffect } from "react";
+import { ROUTE } from "routes";
 import { fetchMovies, selectorMovies, useAppDispatch, useAppSelector } from "store";
 
 export const TrendsPage = () => {
@@ -16,7 +17,7 @@ export const TrendsPage = () => {
   return (
     <div>
       {error && <div>{error}</div>}
-      {movies?.length > 0 && <MoviesList movies={movies} />}
+      {movies?.length > 0 && <MoviesList movies={movies} link={ROUTE.DETAILS_AT_SEARCH} />}
     </div>
   );
 };

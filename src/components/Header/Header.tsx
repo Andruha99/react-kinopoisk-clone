@@ -1,20 +1,19 @@
-import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { PixemaLight } from "assets";
 import { Form, HeaderContainer, HeaderWrap, StyledInputSearch, StyledLink } from "./styles";
-import { InputSearch } from "components/InputSearch/InputSearch";
 import { AccountName } from "components/AccountName/AccountName";
 import { useToggle } from "hooks/useToggle";
 import { useWindowSize } from "hooks/useWindowSize";
 import { BurgerMenu } from "components/BurgerMenu/BurgerMenu";
 import { ROUTE } from "routes";
 import { Link, generatePath, useNavigate } from "react-router-dom";
-import { useDebounce } from "hooks/useDebounce";
 import { useForm } from "react-hook-form";
-import { useAppDispatch } from "store";
+import { useAppDispatch, useAppSelector } from "store";
 import { fetchSearch } from "store/features/searchSlice/searchSlice";
+import { userSelector } from "store/selectors/userSelector";
 
 export const Header = () => {
   const { register, handleSubmit } = useForm();
+  const { isAuth } = useAppSelector(userSelector);
   const dispatch = useAppDispatch();
   const [isMenuOpen, toggleMenu] = useToggle();
   const { width = 0 } = useWindowSize();
@@ -36,9 +35,16 @@ export const Header = () => {
         <Form onSubmit={handleSubmit(onSubmit)}>
           <StyledInputSearch type="text" {...register("searchValue")} />
         </Form>
-        <StyledLink to={ROUTE.SIGN_UP}>
-          <AccountName />
-        </StyledLink>
+        {isAuth ? (
+          <StyledLink to={ROUTE.SETTINGS}>
+            <AccountName />
+          </StyledLink>
+        ) : (
+          <StyledLink to={ROUTE.SIGN_UP}>
+            <AccountName />
+          </StyledLink>
+        )}
+
         {isMobile && (
           <BurgerMenu isMobile={isMobile} handleClose={toggleMenu} isOpen={isMenuOpen} />
         )}

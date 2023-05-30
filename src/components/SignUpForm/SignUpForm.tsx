@@ -11,19 +11,13 @@ import {
 } from "./styles";
 import { ROUTE } from "routes";
 import { AuthValues } from "types";
-import { Link } from "react-router-dom";
 
 interface SignUpFormProps {
   onSubmit: SubmitHandler<AuthValues>;
 }
 
 export const SignUpForm = ({ onSubmit }: SignUpFormProps) => {
-  const { register, handleSubmit, reset } = useForm<AuthValues>();
-  // const dispatch = useAppDispatch();
-
-  // const onSubmit: SubmitHandler<AuthValues> = (data) => {
-  //   dispatch(fetchSignUpUser(data));
-  // };
+  const { register, handleSubmit } = useForm<AuthValues>();
 
   return (
     <SignInContainer>

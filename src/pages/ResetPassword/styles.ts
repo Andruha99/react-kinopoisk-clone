@@ -1,13 +1,12 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { B1, Colors, H2, S3 } from "ui";
+import { Colors, H2, S3 } from "ui";
 
-const SignInContainer = styled.div`
+const ResetPasswordContainer = styled.div`
   width: 100%;
   margin: 0px auto;
 `;
 
-const SignInFormContainer = styled.form`
+const ResetPasswordForm = styled.form`
   display: flex;
   flex-direction: column;
   width: 494px;
@@ -29,25 +28,14 @@ const InputName = styled.h3`
   color: ${Colors.TextColor};
 `;
 
-const StyledSignInput = styled.input`
+const StyledResetInput = styled.input`
   padding-top: 16px;
   padding-bottom: 16px;
   padding-left: 20px;
+  margin-bottom: 40px;
   background-color: ${Colors.InputBackground};
   border-color: ${Colors.LightContext};
   border-radius: 10px;
-`;
-
-const StyledLink = styled(Link)`
-  text-decoration: none;
-`;
-
-const Forgot = styled.p`
-  margin-top: 8px;
-  margin-bottom: 40px;
-  font-size: ${B1};
-  color: ${Colors.LightContext};
-  cursor: pointer;
 `;
 
 const StyledButton = styled.button`
@@ -59,28 +47,11 @@ const StyledButton = styled.button`
   cursor: pointer;
 `;
 
-const SignUpText = styled.p`
-  margin-top: 32px;
-  font-size: ${B1};
-  text-align: center;
-  color: ${Colors.LightContext};
-`;
-
-const SignUpLink = styled(Link)`
-  font-size: ${B1};
-  color: ${Colors.Primary};
-  text-decoration: none;
-`;
-
 export {
-  SignInContainer,
-  SignInFormContainer,
+  ResetPasswordContainer,
+  ResetPasswordForm,
   Title,
   InputName,
-  StyledSignInput,
-  StyledLink,
-  Forgot,
+  StyledResetInput,
   StyledButton,
-  SignUpText,
-  SignUpLink,
 };

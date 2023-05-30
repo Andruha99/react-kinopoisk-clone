@@ -1,6 +1,7 @@
 import { MoviesList } from "components";
 import { ShowMore } from "components/ShowMore/ShowMore";
 import { useEffect, useState } from "react";
+import { ROUTE } from "routes";
 import { fetchMovies, selectorMovies, useAppDispatch, useAppSelector } from "store";
 
 export const HomePage = () => {
@@ -20,7 +21,7 @@ export const HomePage = () => {
   return (
     <div>
       {error && <div>{error}</div>}
-      {movies?.length > 0 && <MoviesList movies={movies} />}
+      {movies?.length > 0 && <MoviesList movies={movies} link={ROUTE.DETAILS} />}
       <ShowMore onClick={handlePage} text={"Show more"} />
     </div>
   );

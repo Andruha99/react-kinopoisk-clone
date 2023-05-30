@@ -1,7 +1,7 @@
 import { MoviesList } from "components";
-import { ShowMore } from "components/ShowMore/ShowMore";
-import React, { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { ROUTE } from "routes";
 import { useAppDispatch, useAppSelector } from "store";
 import { fetchSearch } from "store/features/searchSlice/searchSlice";
 import { searchSelector } from "store/selectors/searchSelector";
@@ -19,7 +19,7 @@ export const SearchPage = () => {
   return (
     <div>
       {error && <div>No results</div>}
-      {movies?.length > 0 && <MoviesList movies={movies} />}
+      {movies?.length > 0 && <MoviesList movies={movies} link={ROUTE.DETAILS_AT_SEARCH} />}
     </div>
   );
 };

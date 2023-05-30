@@ -14,4 +14,7 @@ export enum Colors {
   TextColor = "var(--TextColor)",
   BackgroundTheme = "var(--BackgroundTheme)",
   InputBackground = "var(--InputBackground)",
+  DetailMovieTitle = "var(--DetailMovieTitle)",
+  DetailMovieText = "var(--DetailMovieColumnText)",
+  DetailsRowNames = "var(--DetailsRowNames)",
 }

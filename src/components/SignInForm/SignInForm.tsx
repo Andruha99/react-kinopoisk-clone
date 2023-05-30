@@ -1,5 +1,3 @@
-import React from "react";
-
 import { SubmitHandler, useForm } from "react-hook-form";
 import {
   Forgot,
@@ -9,12 +7,12 @@ import {
   SignUpLink,
   SignUpText,
   StyledButton,
+  StyledLink,
   StyledSignInput,
   Title,
 } from "./styles";
 import { ROUTE } from "routes";
 import { AuthValues } from "types";
-import { Link } from "react-router-dom";
 
 interface SignUpFormProps {
   onSubmit: SubmitHandler<AuthValues>;
@@ -40,10 +38,10 @@ export const SignInForm = ({ onSubmit }: SignUpFormProps) => {
             {...register("password", { required: true })}
             placeholder="Your password"
           />
-          <Link to={ROUTE.RESET_PASSWORD_AT_SIGN_IN}>
+          <StyledLink to={ROUTE.RESET_PASSWORD_AT_SIGN_IN}>
             <Forgot>Forgot password?</Forgot>
-          </Link>
-          <StyledButton type="submit">Sign up</StyledButton>
+          </StyledLink>
+          <StyledButton type="submit">Sign in</StyledButton>
           <SignUpText>
             Don’t have an account? <SignUpLink to={ROUTE.SING_UP_AT_SIGN_IN}>Sign Up</SignUpLink>
           </SignUpText>
