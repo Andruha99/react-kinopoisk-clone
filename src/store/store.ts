@@ -4,6 +4,7 @@ import detailsReducer from "./features/detailsSlice/detailsSlice";
 import searchReducer from "./features/searchSlice/searchSlice";
 import userReducer from "./features/userSlice/userSlice";
 import favoritesReducer from "./features/favoritesSlice/favoritesSlice";
+import themeReducer from "./features/themeSlice/themeSlice";
 
 export const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ export const store = configureStore({
     search: searchReducer,
     user: userReducer,
     favorites: favoritesReducer,
+    theme: themeReducer,
   },
 });
 

@@ -1,4 +1,4 @@
-import { PixemaLight } from "assets";
+import { PixemaDark, PixemaLight } from "assets";
 import { Form, HeaderContainer, HeaderWrap, StyledInputSearch, StyledLink } from "./styles";
 import { AccountName } from "components/AccountName/AccountName";
 import { useToggle } from "hooks/useToggle";
@@ -10,6 +10,7 @@ import { useForm } from "react-hook-form";
 import { useAppDispatch, useAppSelector } from "store";
 import { fetchSearch } from "store/features/searchSlice/searchSlice";
 import { userSelector } from "store/selectors/userSelector";
+import { themeSelector } from "store/selectors/themeSelector";
 
 export const Header = () => {
   const { register, handleSubmit } = useForm();
@@ -18,6 +19,7 @@ export const Header = () => {
   const [isMenuOpen, toggleMenu] = useToggle();
   const { width = 0 } = useWindowSize();
   const isMobile = width < 1280;
+  const { theme } = useAppSelector(themeSelector);
 
   const navigate = useNavigate();
 
@@ -29,9 +31,7 @@ export const Header = () => {
   return (
     <HeaderWrap>
       <HeaderContainer>
-        <Link to={ROUTE.HOME}>
-          <PixemaLight />
-        </Link>
+        <Link to={ROUTE.HOME}>{theme === "light" ? <PixemaLight /> : <PixemaDark />}</Link>
         <Form onSubmit={handleSubmit(onSubmit)}>
           <StyledInputSearch type="text" {...register("searchValue")} />
         </Form>

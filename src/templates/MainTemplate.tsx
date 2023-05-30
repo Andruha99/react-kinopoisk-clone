@@ -2,13 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import { Header, SideBar } from "components";
 import { Container, TemplateContainer, TemplateWrap } from "./style";
+import { useAppSelector } from "store";
+import { themeSelector } from "store/selectors/themeSelector";
 
 export const MainTemplate = () => {
-  const [theme, setTheme] = useState("light");
-
-  const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
-  };
+  const { theme } = useAppSelector(themeSelector);
 
   useEffect(() => {
     document.documentElement.setAttribute("theme", theme);
@@ -18,7 +16,6 @@ export const MainTemplate = () => {
     <Container>
       <div>
         <TemplateContainer>
-          <button onClick={toggleTheme}>Theme: {theme}</button>
           <Header />
           <TemplateWrap>
             <SideBar />
