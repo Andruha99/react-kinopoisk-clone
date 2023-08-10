@@ -7,6 +7,7 @@ import {
   DetailsPoster,
   DetailsWrap,
   FavoriteButton,
+  FavoriteFilm,
   Genre,
   MovieTitle,
   Plot,
@@ -66,9 +67,9 @@ export const DetailsCard = ({ details }: DetailsCardProps) => {
       <div>
         <DetailsPoster src={details.poster} alt={details.title} />
         {checkFavorites(details.imdbID) ? (
-          <FavoriteButton onClick={handleRemoveFavorite}>
+          <FavoriteFilm onClick={handleRemoveFavorite}>
             <FavoritesIcon />
-          </FavoriteButton>
+          </FavoriteFilm>
         ) : (
           <FavoriteButton onClick={handleAddFavorite}>
             <FavoritesIcon />

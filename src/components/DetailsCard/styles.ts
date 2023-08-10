@@ -57,6 +57,30 @@ const FavoriteButton = styled.div`
   }
 `;
 
+const FavoriteFilm = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 266px;
+  padding: 16px 0px;
+  margin-top: 32px;
+  background-color: ${Colors.OrangeTertiary};
+  border-radius: 10px;
+  cursor: pointer;
+  svg {
+    path {
+      fill: ${Colors.WhiteContext};
+    }
+  }
+
+  ${Media.XL} {
+    width: 208px;
+  }
+
+  ${Media.SM} {
+    width: 272px;
+  }
+`;
+
 const Genre = styled.p`
   font-size: ${B1};
   color: ${Colors.DetailsRowNames};
@@ -119,6 +143,7 @@ export {
   DetailsWrap,
   DetailsPoster,
   FavoriteButton,
+  FavoriteFilm,
   Genre,
   MovieTitle,
   BadgeContainer,
