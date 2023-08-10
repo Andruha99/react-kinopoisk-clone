@@ -24,7 +24,7 @@ const favoritesSlice = createSlice({
   initialState,
   reducers: {
     addFavorite(state, { payload }) {
-      if (state.favorites.find((favorite) => favorite.imdbID !== payload.imdbID)) {
+      if (!state.favorites.find((favorite) => favorite.imdbID === payload.imdbID)) {
         state.favorites.push(payload);
         localStorage.setItem("favorites", JSON.stringify(state.favorites));
       }
