@@ -17,7 +17,7 @@ import {
   TableRow,
 } from "./styles";
 import { useAppDispatch } from "store";
-import { addFavorite } from "store/features/favoritesSlice/favoritesSlice";
+import { addFavorite, removeFavorite } from "store/features/favoritesSlice/favoritesSlice";
 
 interface DetailsCardProps {
   details: DetailsMovie;
@@ -37,13 +37,43 @@ export const DetailsCard = ({ details }: DetailsCardProps) => {
     dispatch(addFavorite(movie));
   };
 
+  const handleRemoveFavorite = () => {
+    const movie = {
+      title: details.title,
+      year: details.year,
+      imdbID: details.imdbID,
+      type: details.type,
+      poster: details.poster,
+    };
+    dispatch(removeFavorite(movie));
+  };
+
+  const checkFavorites = (imdb: string) => {
+    const notParsedFavorites = localStorage.getItem("favorites");
+
+    if (notParsedFavorites !== null) {
+      const favorites = JSON.parse(notParsedFavorites);
+      if (favorites.find((favorite: DetailsMovie) => favorite.imdbID === imdb)) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  };
+
   return (
     <DetailsWrap>
       <div>
         <DetailsPoster src={details.poster} alt={details.title} />
-        <FavoriteButton onClick={handleAddFavorite}>
-          <FavoritesIcon />
-        </FavoriteButton>
+        {checkFavorites(details.imdbID) ? (
+          <FavoriteButton onClick={handleRemoveFavorite}>
+            <FavoritesIcon />
+          </FavoriteButton>
+        ) : (
+          <FavoriteButton onClick={handleAddFavorite}>
+            <FavoritesIcon />
+          </FavoriteButton>
+        )}
       </div>
       <div>
         <div>
